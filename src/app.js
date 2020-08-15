@@ -70,6 +70,13 @@ app.delete("/repositories/:id", checkID, (request, response) => {
   return response.status(204).send();
 });
 
+app.delete("/all-repositories", (request, response) => {
+
+  repositories.length = 0;
+
+  return response.status(204).send();
+});
+
 app.post("/repositories/:id/like", checkID, (request, response) => {
 
   const indexRepository = request.indexRepository;
